@@ -1,7 +1,7 @@
 import { Document, model, Schema } from "mongoose";
 import { IUser } from "../interfaces/user";
 
-interface userDocument extends IUser, Document {}
+export interface userDocument extends IUser, Document {}
 
 const userSchema = new Schema<userDocument>(
   {

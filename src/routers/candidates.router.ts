@@ -1,10 +1,11 @@
 import { Router } from "express";
-import { getCandidates, getResults, getState } from "../controllers/candidates";
+import { getCandidates } from "../controllers/candidates/getCandidates";
+import { get } from "mongoose";
+import { getState } from "../controllers/candidates/getState";
 
 const router = Router();
 
-router.get("/candidates", getCandidates);
-router.get("/", getResults);
-router.get("/state", getState);
+router.get("/", getCandidates);
+router.get("/state/:state", getState);
 
 export default router;

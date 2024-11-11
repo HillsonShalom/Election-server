@@ -15,6 +15,11 @@ const userSchema = new Schema<candidateDocument>({
     type: Number,
     default: 0,
   },
+  color: {
+    type: String,
+    enum: ["red", "blue", "yellow"],
+    required: true
+  }
 });
 
 export const candModel = model<ICandidate>("Candidate", userSchema);

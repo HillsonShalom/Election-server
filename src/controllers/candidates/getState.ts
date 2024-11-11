@@ -22,7 +22,7 @@ export const getState = async (req: Request, res: Response) => {
         acc[candName] = (acc[candName] || 0) + 1;
         return acc;
     }, {});
-    res.json({votes: votesReduce});
+    res.json(votesReduce);
   } catch (err) {
     const error = err as AppResError;
     res
@@ -31,4 +31,3 @@ export const getState = async (req: Request, res: Response) => {
   }
 };
 
-//

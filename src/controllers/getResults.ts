@@ -28,21 +28,3 @@ export const getResults = async (req: Request, res: Response) => {
           .json({ name: error.name, message: error.message });
     }
 };
-
-/*
-const state = await stateModel
-      .findOne({ $or: [{ name: param }, { code: param }] })
-      .select("-_id -__v")
-      .populate({
-        path: "votes",
-        select: "candidate -_id",
-        populate: { path: "candidate", select: 'name -_id' },
-      }).exec();
-    if (!state) throw new AppResError(404, "State not found!");
-
-    const votesReduce = state.votes.reduce<{ [key: string]: number }>((acc, vote) => {
-        const candName = (vote as {candidate: ICandidate}).candidate.name;
-        acc[candName] = (acc[candName] || 0) + 1;
-        return acc;
-    }, {});
-*/
